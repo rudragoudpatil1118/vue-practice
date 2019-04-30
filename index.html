@@ -27,6 +27,16 @@
 			</li>
 		</ol>
 	</div>
+
+	<div id="app-5">
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">Reverse message</button>
+	</div>
+
+	<div id="app-6">
+		<p>{{message}}</p>
+		<input v-model="message" type="" name="">
+	</div>
 </body>
 <script type="text/javascript">
 	var app= new Vue({
@@ -59,6 +69,25 @@
 				{text:'Learn something awsome'},
 				{text:'Learn Laravel'}
 			]
+		}
+	})
+
+	var app5 = new Vue({
+		el: '#app-5',
+		data: {
+			message:'Hello Vue.js!'
+		},
+		methods:{
+			reverseMessage:function(){
+				this.message = this.message.split('').reverse().join('')
+			}
+		}
+	})
+
+	var app6 = new Vue({
+		el:'#app-6',
+		data:{
+			message:'Hello Vue!'
 		}
 	})
 </script>
